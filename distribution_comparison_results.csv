@@ -1,0 +1,4 @@
+Distribution_1,Distribution_2,LogLikelihood_Ratio,p_value
+power_law,lognormal,-8.044552749158,0.008438770278353363
+power_law,exponential,176.27867530800705,7.281611416487878e-09
+power_law,truncated_power_law,-11.477140423456385,1.6590035069041775e-06
