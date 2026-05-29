@@ -1,6 +1,16 @@
 import pandas as pd
 import os
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+RAW_DATA = os.path.join(
+    BASE_DIR,
+    "DATA",
+    "RAW",
+    "RecipeDB_Cuisine_Nutrition.csv"
+)
+
+df = pd.read_csv(RAW_DATA)
 
 def run():
     print("\n" + "=" * 70)
@@ -10,7 +20,7 @@ def run():
     os.makedirs('DATA/PROCESSED', exist_ok=True)
 
     print("\n── Loading Raw Data ─────────────────────────────────────────────")
-    df = pd.read_csv('DATA/RAW/RecipeDB_Cuisine_Nutrition.csv')
+    df = pd.read_csv(RAW_DATA)
     df['cuisine'] = df['Region']
     print(f"   Loaded {len(df):,} recipes with {df['cuisine'].nunique()} unique cuisines")
     df.to_csv("DATA/PROCESSED/RecipeDB_Cuisine.csv", index=False, float_format='%.4f')
